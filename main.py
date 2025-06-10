@@ -73,15 +73,13 @@ def show_main_app():
         else:
             st.warning("Please enter a stock symbol.")
             exit(0)
-    return 
-
-    
-     # --- Logout Button ---
+        # --- Logout Button ---
     st.sidebar.markdown("---")
     if st.sidebar.button("Logout"):
         st.session_state.logged_in = False
         st.session_state.username = None
-        st.rerun() # Rerun to go back to login page
+        st.rerun() # Rerun to go back to login page    
+    return 
 
 
 
@@ -180,7 +178,7 @@ def print_header(ticker: str) -> None:
     print(Fore.CYAN + "=" * 80)
     print(Fore.CYAN + "STOCK ANALYSIS: " + Fore.YELLOW + ticker + Style.RESET_ALL)
     print(Fore.CYAN + "=" * 80 + Style.RESET_ALL + "\n")
-      
+
 
 # --- Main App Logic (Session State Management) ---
 if "logged_in" not in st.session_state:
